@@ -1,9 +1,10 @@
+import React from 'react';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Netflix Full Stack Clone</h1>
+      <h1>heelo</h1>
     </div>
   );
 }
