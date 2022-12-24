@@ -1,12 +1,11 @@
 import React from 'react';
+import Navbar from './Navbar/Navbar';
 
-const HomeScreen = (props) => {
+const HomeScreen = () => {
     return (
         <div className='home-screen'>
-
-            <h1>{props.heading}</h1>
-            {/* {Navbar} */}
-
+            <Navbar />
+            <h1></h1>
             {/* {Banner} */}
 
             {/* {Rows} */}
