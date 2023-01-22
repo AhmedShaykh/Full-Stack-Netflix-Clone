@@ -1,1 +1,1 @@
-# Netflix Full Stack Clone!
+# NetFlix Clone!
