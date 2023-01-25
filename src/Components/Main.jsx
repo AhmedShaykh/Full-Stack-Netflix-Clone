@@ -33,8 +33,8 @@ const Main = () => {
                 />
 
                 <div className='absolute w-full top-[20%] p-4 md:p-8'>
-                    <h1 className='text-3xl md:text-5xl font-bold'>{movie?.title}</h1>
-                    <div className='my-4'>
+                    <h1 className='text-3xl md:text-5xl mt-10 font-bold'>{movie?.title}</h1>
+                    <div className='my-8'>
                         <button className='border bg-gray-300 text-black border-gray-300 py-2 px-5'>
                             Play
                         </button>
