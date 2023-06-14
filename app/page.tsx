@@ -1,12 +1,11 @@
 import React from 'react';
+import Auth from './Auth';
 
 const Home = () => {
     return (
-        <div>
-            <h1 className="text-black text-center text-5xl">
-                Full Stack Netflix Clone
-            </h1>
-        </div>
+        <>
+            <Auth />
+        </>
     )
 };
 
