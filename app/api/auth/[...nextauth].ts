@@ -48,7 +48,7 @@ export default NextAuth({
         })
     ],
     pages: {
-        signIn: "/"
+        signIn: "/auth"
     },
     debug: process.env.NODE_ENV === "development",
     session: { strategy: "jwt" },
