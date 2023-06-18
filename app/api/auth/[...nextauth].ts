@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import prismadb from '@/libs/prismadb';
-import { compare } from 'bcrypt';
+import prismadb from "@/lib/prismadb";
+import { compare } from "bcrypt";
 
 export default NextAuth({
     providers: [
@@ -21,7 +21,7 @@ export default NextAuth({
             async authorize(credentials) {
 
                 if (!credentials?.email || !credentials?.password) {
-                    throw new Error("Email and password required");
+                    throw new Error("Email & Password Required");
                 }
 
                 const user = await prismadb.user.findUnique({
@@ -31,17 +31,29 @@ export default NextAuth({
                 });
 
                 if (!user || !user.hashedPassword) {
-                    throw new Error('Email does not exist');
+                    throw new Error("Email Does Not Exist");
                 }
 
-                const isCorrectPassword = await compare(credentials.password, user.hashedPassword);
+                const isCorrectPassword = await compare(
+                    credentials.password,
+                    user.hashedPassword
+                );
 
                 if (!isCorrectPassword) {
-                    throw new Error('Incorrect password');
+                    throw new Error("Incorrect password");
                 }
 
                 return user;
             }
         })
-    ]
+    ],
+    pages: {
+        signIn: "/"
+    },
+    debug: process.env.NODE_ENV === "development",
+    session: { strategy: "jwt" },
+    jwt: {
+        secret: process.env.NEXTAUTH_JWT_SECRET,
+    },
+    secret: process.env.NEXTAUTH_SECRET
 });
