@@ -28,7 +28,7 @@ const Auth = () => {
                 email,
                 password,
                 redirect: false,
-                callbackUrl: "/"
+                callbackUrl: "/profiles"
             });
 
             router.push("/");
@@ -107,7 +107,7 @@ const Auth = () => {
                         <div className="flex items-center gap-4 mt-4 justify-center">
                             <div
                                 className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition"
-                                onClick={() => signIn('google', { callbackUrl: "/" })}
+                                onClick={() => signIn('google', { callbackUrl: "/profiles" })}
                             >
                                 <FcGoogle size={32} />
                             </div>
