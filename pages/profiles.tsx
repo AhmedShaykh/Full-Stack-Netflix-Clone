@@ -42,7 +42,7 @@ const UserCard = () => {
             </div>
 
             <div className="mt-4 text-gray-400 text-2xl text-center group-hover:text-white">
-                {/* {user?.name} */} Name
+                {/* {user?.name} */} Ahmed Shaikh
             </div>
         </div>
     );
@@ -62,7 +62,7 @@ const Profiles = () => {
                 </h1>
 
                 <div className="flex items-center justify-center gap-8 mt-10">
-                    <div onClick={() => { }}>
+                    <div onClick={() => router.push("/")}>
                         <UserCard />
                     </div>
                 </div>
