@@ -9,24 +9,24 @@ const MobileMenu: FC<Props> = ({ visible }) => {
     if (!visible) return null;
 
     return (
-        <div className="bg-black-blur-50 backdrop-blur-xl w-56 absolute top-8 left-0 flex-col border-2 border-gray-800 flex">
-            <div className="flex flex-col gap-2">
-                <div className="p-2 text-center text-white hover:bg-white hover:text-black">
+        <div className="bg-black w-56 absolute top-8 left-0 py-5 flex-col border-2 border-gray-800 flex">
+            <div className="flex flex-col gap-4">
+                <div className="px-3 text-center text-white hover:underline">
                     Home
                 </div>
-                <div className="p-2 text-center text-white hover:bg-white hover:text-black">
+                <div className="px-3 text-center text-white hover:underline">
                     Series
                 </div>
-                <div className="p-2 text-center text-white hover:bg-white hover:text-black">
+                <div className="px-3 text-center text-white hover:underline">
                     Films
                 </div>
-                <div className="p-2 text-center text-white hover:bg-white hover:text-black">
+                <div className="px-3 text-center text-white hover:underline">
                     New & Popular
                 </div>
-                <div className="p-2 text-center text-white hover:bg-white hover:text-black">
+                <div className="px-3 text-center text-white hover:underline">
                     My List
                 </div>
-                <div className="p-2 text-center text-white hover:bg-white hover:text-black">
+                <div className="px-3 text-center text-white hover:underline">
                     Browse by Languages
                 </div>
             </div>
