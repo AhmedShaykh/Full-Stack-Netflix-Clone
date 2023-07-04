@@ -2,6 +2,7 @@ import React from "react";
 import { NextPageContext } from "next";
 import { getSession } from "next-auth/react";
 import Navbar from "@/Components/Navbar";
+import Billboard from "@/Components/Billboard";
 
 export async function getServerSideProps(context: NextPageContext) {
 
@@ -25,6 +26,7 @@ const Home = () => {
     return (
         <>
             <Navbar />
+            <Billboard />
         </>
     )
 };
