@@ -1,13 +1,14 @@
-import React, { FC } from 'react';
-import { MovieInterface } from '@/Types';
-import { isEmpty } from 'lodash';
+import React, { FC } from "react";
+import MovieCard from "./MovieCard";
+import { MovieInterface } from "@/Types";
+import { isEmpty } from "lodash";
 
 interface MovieListProps {
-    data?: MovieInterface[];
+    data: MovieInterface[];
     title: string;
 };
 
-const MovieList: FC<MovieListProps> = ({ data, title }) => {
+const MovieList: FC<MovieListProps> = ({ title, data }) => {
 
     if (isEmpty(data)) {
         return null;
@@ -20,9 +21,12 @@ const MovieList: FC<MovieListProps> = ({ data, title }) => {
                     {title}
                 </p>
                 <div className="grid grid-cols-4 gap-2">
-                    {/* {data.map((movie) => (
-                        <MovieCard key={movie.id} data={movie} />
-                    ))} */}
+                    {data.map((movie) => (
+                        <MovieCard
+                            key={movie.id}
+                            data={movie}
+                        />
+                    ))}
                 </div>
             </div>
         </div>
