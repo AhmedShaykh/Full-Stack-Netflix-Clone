@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { MovieInterface } from "@/Types";
 import { PlayIcon } from "@heroicons/react/24/outline";
+import FavoriteButton from "./FavoriteButton";
 
 interface MovieCardProps {
     data: MovieInterface;
@@ -33,6 +34,7 @@ const MovieCard: FC<MovieCardProps> = ({ data }) => {
                         >
                             <PlayIcon className="text-black w-4 lg:w-6" />
                         </div>
+                        <FavoriteButton movieId={data?.id} />
                     </div>
                     <p className="text-green-400 font-semibold mt-4">
                         New <span className="text-white">2023</span>
