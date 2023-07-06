@@ -10,8 +10,7 @@ const useCurrentUser = () => {
         error,
         isLoading,
         mutate,
-    };
-
+    }
 };
 
 export default useCurrentUser;

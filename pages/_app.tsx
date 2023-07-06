@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
-import "./globals.css";
 import Head from "next/head";
+import "./globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -10,7 +10,6 @@ export default function App({ Component, pageProps }: AppProps) {
           Netflix
         </title>
       </Head>
-
       <Component {...pageProps} />
     </>
   )

@@ -20,6 +20,7 @@ const MovieList: FC<MovieListProps> = ({ title, data }) => {
                 <p className="text-white text-md md:text-xl lg:text-2xl font-semibold mb-4">
                     {title}
                 </p>
+
                 <div className="grid grid-cols-4 gap-2">
                     {data.map((movie) => (
                         <MovieCard
@@ -28,6 +29,7 @@ const MovieList: FC<MovieListProps> = ({ title, data }) => {
                         />
                     ))}
                 </div>
+
             </div>
         </div>
     )

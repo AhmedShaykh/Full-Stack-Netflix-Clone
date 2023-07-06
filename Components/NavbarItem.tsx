@@ -3,7 +3,7 @@ import React, { FC } from "react";
 interface Props {
     label: string;
     active?: boolean;
-}
+};
 
 const NavbarItem: FC<Props> = ({ label, active }) => {
     return (
