@@ -2,10 +2,17 @@ import React, { useCallback } from "react";
 import useBillboard from "@/Hooks/useBillboard";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import PlayButton from "./PlayButton";
+import useInfoModal from "@/Hooks/useInfoModal";
 
 const Billboard = () => {
 
+    const { openModal } = useInfoModal();
+
     const { data } = useBillboard();
+
+    const handleOpenModal = useCallback(() => {
+        openModal(data?.id);
+    }, [openModal, data?.id]);
 
     return (
         <div className="relative h-[58vw] w-full">
@@ -29,6 +36,7 @@ const Billboard = () => {
                     <PlayButton movieId={data?.id} />
                     <button
                         className="bg-white text-white bg-opacity-30 rounded-md py-1 md:py-2 px-2 md:px-4 w-auto text-xs lg:text-lg font-semibold flex flex-row items-center hover:bg-opacity-20 transition"
+                        onClick={handleOpenModal}
                     >
                         <InformationCircleIcon className="w-4 md:w-7 mr-2" />
                         More Info

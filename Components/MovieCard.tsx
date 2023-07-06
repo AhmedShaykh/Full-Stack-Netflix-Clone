@@ -1,14 +1,17 @@
 import React, { FC } from "react";
-import { MovieInterface } from "@/Types";
-import { PlayIcon } from "@heroicons/react/24/outline";
 import FavoriteButton from "./FavoriteButton";
+import useInfoModal from "@/Hooks/useInfoModal";
+import { MovieInterface } from "@/Types";
 import { useRouter } from "next/router";
+import { ChevronDownIcon, PlayIcon } from "@heroicons/react/24/outline";
 
 interface MovieCardProps {
     data: MovieInterface;
 };
 
 const MovieCard: FC<MovieCardProps> = ({ data }) => {
+
+    const { openModal } = useInfoModal();
 
     const router = useRouter();
 
@@ -39,6 +42,12 @@ const MovieCard: FC<MovieCardProps> = ({ data }) => {
                             <PlayIcon className="text-black w-4 lg:w-6" />
                         </div>
                         <FavoriteButton movieId={data?.id} />
+                        <div
+                            className="cursor-pointer ml-auto group/item w-6 h-6 lg:w-10 lg:h-10 border-white border-2 rounded-full flex justify-center items-center transition hover:border-neutral-300"
+                            onClick={() => openModal(data?.id)}
+                        >
+                            <ChevronDownIcon className="text-white group-hover/item:text-neutral-300 w-4 lg:w-6" />
+                        </div>
                     </div>
                     <p className="text-green-400 font-semibold mt-4">
                         New <span className="text-white">2023</span>
