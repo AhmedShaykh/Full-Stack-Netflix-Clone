@@ -2,7 +2,6 @@ import React, { useCallback, useState } from "react";
 import Input from "@/Components/Input";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
-import { FcGoogle } from 'react-icons/fc';
 import axios from "axios";
 
 const Auth = () => {
@@ -74,7 +73,7 @@ const Auth = () => {
                                 <Input
                                     id="name"
                                     type="text"
-                                    label="Username"
+                                    label="Full Name"
                                     value={name}
                                     onChange={(e: any) => setName(e.target.value)}
                                 />
@@ -103,15 +102,6 @@ const Auth = () => {
                         >
                             {variant === "login" ? "Login" : "Sign up"}
                         </button>
-
-                        <div className="flex items-center gap-4 mt-4 justify-center">
-                            <div
-                                className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition"
-                                onClick={() => signIn('google', { callbackUrl: "/profiles" })}
-                            >
-                                <FcGoogle size={32} />
-                            </div>
-                        </div>
 
                         <p className="text-neutral-500 mt-4">
                             {variant === "login" ? "First time using Netflix?" : "Already have an account?"}
